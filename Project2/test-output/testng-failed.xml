@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Project2(failed)">
+    <classes>
+      <class name="elementsTests.TestTextBox">
+        <methods>
+          <include name="textBoxInvalidEmailAddressBorderColor"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="setUpPage"/>
+        </methods>
+      </class> <!-- elementsTests.TestTextBox -->
+    </classes>
+  </test> <!-- Project2(failed) -->
+</suite> <!-- Failed suite [Default Suite] -->

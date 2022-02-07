@@ -12,6 +12,7 @@ import interactionsPages.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -24,7 +25,7 @@ import java.time.Duration;
 public class BaseClass {
     protected WebDriver driver;
     protected WebDriverWait wait;
-    protected JavascriptExecutor js;
+    private JavascriptExecutor js;
 
     //Objects
 
@@ -129,6 +130,17 @@ public class BaseClass {
         driver.manage().deleteAllCookies();
         driver.close();
         driver.quit();
+    }
+
+    // METHODS-----------------------------------------------------------------------------------
+
+
+    public void hiddenAdvertisement(WebElement element){
+        js.executeScript("arguments[0].style.visibility='hidden'", element);
+    }
+
+    public void scroll(WebElement element){
+        js.executeScript("arguments[0].scrollIntoView();",element);
     }
 
 }
