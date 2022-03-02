@@ -25,7 +25,9 @@ import java.time.Duration;
 public class BaseClass {
     protected WebDriver driver;
     protected WebDriverWait wait;
-    private JavascriptExecutor js;
+    protected Actions actions;
+    protected JavascriptExecutor js;
+
 
     //Objects
 
@@ -66,7 +68,7 @@ public class BaseClass {
 
     //----------------------------------------------
 
-    protected Actions actions;
+
 
     @BeforeClass
     public void setUp(){
@@ -78,6 +80,7 @@ public class BaseClass {
         wait = new WebDriverWait(driver,Duration.ofSeconds(15));
 
         js = (JavascriptExecutor) driver;
+        actions = new Actions(driver);
 
 
 
@@ -119,8 +122,8 @@ public class BaseClass {
         tabsPage = new TabsPage(driver);
         toolTipsPage = new ToolTipsPage(driver);
 
-        //------------------------------------------------
-        actions = new Actions(driver);
+
+
 
     }
 
@@ -135,12 +138,12 @@ public class BaseClass {
     // METHODS-----------------------------------------------------------------------------------
 
 
-    public void hiddenAdvertisement(WebElement element){
-        js.executeScript("arguments[0].style.visibility='hidden'", element);
-    }
+    public void hiddenAdvertisement(WebElement element){js.executeScript("arguments[0].style.visibility='hidden'", element);}
 
     public void scroll(WebElement element){
         js.executeScript("arguments[0].scrollIntoView();",element);
     }
+
+    public void jsClick(WebElement element){js.executeScript("arguments[0].click();",element);}
 
 }

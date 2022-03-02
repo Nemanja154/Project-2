@@ -5,6 +5,7 @@
         <classes>
             <class name="homePageTests.TestHomePage" />
             <class name="elementsTests.TestTextBox" />
+            <class name="elementsTests.TestCheckBox"/>
         </classes>
     </test>
 
